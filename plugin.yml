@@ -2,7 +2,7 @@ name: EntityGraph
 main: cokoc.entitygraph.EntityGraph
 version: 1.0
 
-command:
-  test:
-    description : Tests.
-    usage: /test
+commands:
+  graph:
+    description : Gives you a map graphing the mob population around you.
+    usage: /test [mob group]

@@ -22,14 +22,19 @@ public class EntityGraph extends JavaPlugin {
 		if(! (sender instanceof Player)) {
 			sender.sendMessage(ChatColor.DARK_RED + "You must be a player to use this command!");
 			return true;
-		}
+		} Player senderPlayer = (Player) sender;
 		
 		if(command.getName().equalsIgnoreCase("test")) {
 			ItemStack map = new ItemStack(Material.MAP);
 			map.setDurability((short) 0);
 			
+			senderPlayer.getInventory().addItem(map);
+			
 			MapView mapView = Bukkit.getMap((short) 0);
-			mapView.
+			if(mapView.getRenderers().size() > 0)
+				for(int i = 0; i < mapView.getRenderers().size(); ++i)
+					mapView.removeRenderer(mapView.getRenderers().get(i));
+			mapView.addRenderer(new GraphMapRenderer());
 		}
 		
 		return true;
