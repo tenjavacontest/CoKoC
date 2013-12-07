@@ -1,0 +1,8 @@
+name: EntityGraph
+main: cokoc.entitygraph.EntityGraph
+version: 1.0
+
+command:
+  test:
+    description : Tests.
+    usage: /test
